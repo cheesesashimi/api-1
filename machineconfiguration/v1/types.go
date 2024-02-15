@@ -459,6 +459,10 @@ type MachineConfigPoolStatusConfiguration struct {
 	// +listType=atomic
 	// +optional
 	Source []corev1.ObjectReference `json:"source,omitempty"`
+
+	// Contains an object reference to the desired MachineOSImage for this MachineConfigPool.
+	// +optional
+	MachineOSImage *corev1.ObjectReference `json:"machineOSImage"`
 }
 
 // MachineConfigPoolCondition contains condition information for an MachineConfigPool.

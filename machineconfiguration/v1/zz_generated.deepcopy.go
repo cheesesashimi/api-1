@@ -783,6 +783,11 @@ func (in *MachineConfigPoolStatusConfiguration) DeepCopyInto(out *MachineConfigP
 		*out = make([]corev1.ObjectReference, len(*in))
 		copy(*out, *in)
 	}
+	if in.MachineOSImage != nil {
+		in, out := &in.MachineOSImage, &out.MachineOSImage
+		*out = new(corev1.ObjectReference)
+		**out = **in
+	}
 	return
 }
 
